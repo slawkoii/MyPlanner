@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.openButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // mainListView
@@ -70,6 +72,7 @@
             this.newTask.Name = "newTask";
             this.newTask.Size = new System.Drawing.Size(797, 27);
             this.newTask.TabIndex = 3;
+            this.newTask.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NewTask_PressEnter);
             // 
             // addButton
             // 
@@ -108,11 +111,33 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Nowe Zadanie";
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(962, 61);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(131, 29);
+            this.saveButton.TabIndex = 8;
+            this.saveButton.Text = "Zapisz Liste";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // openButton
+            // 
+            this.openButton.Location = new System.Drawing.Point(1136, 61);
+            this.openButton.Name = "openButton";
+            this.openButton.Size = new System.Drawing.Size(131, 29);
+            this.openButton.TabIndex = 9;
+            this.openButton.Text = "Wczytaj Liste";
+            this.openButton.UseVisualStyleBackColor = true;
+            this.openButton.Click += new System.EventHandler(this.OpenButton_Click);
+            // 
             // MyPlannerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1279, 571);
+            this.Controls.Add(this.openButton);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -138,5 +163,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button saveButton;
+        private Button openButton;
     }
 }
