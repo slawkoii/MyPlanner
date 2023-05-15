@@ -8,7 +8,7 @@ namespace MyPlanner
 {
     internal class FileOps
     {
-        internal void SaveTasksToFile(string fileName, List<string> tasks)
+        internal static void SaveTasksToFile(string fileName, List<string> tasks)
         {
             using StreamWriter writer = new(fileName);
             foreach (string task in tasks)
@@ -17,7 +17,7 @@ namespace MyPlanner
             }
         }
 
-        internal List<string> LoadTasksFromFile(string fileName)
+        internal static List<string> LoadTasksFromFile(string fileName)
         {
             List<string> loadedTasks = new();
 
@@ -34,7 +34,7 @@ namespace MyPlanner
             return loadedTasks;
         }
 
-        internal void ClearFile(string fileName)
+        internal static void ClearFile(string fileName)
         {
             File.WriteAllText(fileName, string.Empty);
         }

@@ -6,13 +6,13 @@ namespace MyPlanner
     {
         private readonly string fileName = "todo.txt";
         private List<string> tasks;
-        private readonly FileOps fileOps;
+       // private readonly FileOps fileOps;
 
         public MyPlannerForm()
         {
             InitializeComponent();
             tasks = new List<string>();
-            fileOps = new FileOps();
+           // fileOps = new FileOps();
         }        
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace MyPlanner
             tasks.Clear();
             toDoList.Items.Clear();
 
-            tasks = fileOps.LoadTasksFromFile(fileName);
+            tasks = FileOps.LoadTasksFromFile(fileName);
            
             foreach (string task in tasks)
             {
@@ -65,8 +65,8 @@ namespace MyPlanner
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            fileOps.ClearFile(fileName);
-            fileOps.SaveTasksToFile(fileName, tasks);
+            FileOps.ClearFile(fileName);
+            FileOps.SaveTasksToFile(fileName, tasks);
             MessageBox.Show("Zadania zosta³y zapisane do pliku.", "Zapisano", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }           
 
